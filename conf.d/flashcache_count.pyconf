@@ -1,0 +1,31 @@
+modules {
+    module {
+        name = "flashcache_count"
+        language = "python"
+    }
+}
+
+collection_group {
+    collect_every = 10
+    time_threshold = 10
+    metric {
+        name_match = "fc_miss_write_osd_([0-9]+)"
+        value_threshold = 0
+    }
+    metric {
+        name_match = "fc_miss_read_osd_([0-9]+)"
+        value_threshold = 0
+    }
+    metric {
+        name_match = "fc_clean_count_osd_([0-9]+)"
+        value_threshold = 0
+    }
+    metric {
+        name_match = "fc_metaddata_dirties_osd_([0-9]+)"
+        value_threshold = 0
+    }
+    metric {
+        name_match = "fc_front_merge_osd_([0-9]+)"
+        value_threshold = 0
+    }
+}
